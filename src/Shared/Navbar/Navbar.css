@@ -1,0 +1,30 @@
+.nav_link a {
+  margin-inline: 1.25rem;
+  opacity: 0.9;
+}
+
+.nav-link {
+  padding: 20px 0px;
+  display: inline-block;
+  position: relative;
+}
+.nav-link-mobile {
+  padding: 10px 0px;
+}
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #f9bf29;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+  opacity: 1;
+}
