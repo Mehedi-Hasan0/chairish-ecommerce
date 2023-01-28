@@ -70,6 +70,7 @@ const AuthProvider = ({ children }) => {
         loading,
         // shopping cart added products data
         cartProducts,
+        setCartProducts,
         viewCart,
         isLoading,
         refetch

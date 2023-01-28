@@ -9,7 +9,7 @@ import { AuthContext } from '../../context/AuthProvider';
 import NavCart from './NavCart/NavCart';
 
 const Navbar = () => {
-    const { user, logout, cartProducts } = useContext(AuthContext);
+    const { user, logout, cartProducts, setCartProducts } = useContext(AuthContext);
     const [toggle, setToggle] = useState(false);
 
     const handleLogout = () => {
@@ -68,8 +68,7 @@ const Navbar = () => {
                                     </div>
                                     :
                                     <>
-                                        <li><Link to='/login'>Login</Link></li>
-                                        <li><Link to='/signup'>Sign Up</Link></li>
+                                        <li><p className='flex justify-center items-center'>Please Log in first!</p></li>
                                     </>
                             }
 
