@@ -4,8 +4,8 @@ import minus from '../../../../assets/icon/4115236_delete_min_minus_icon.svg';
 
 const CartProductsCard = ({ products }) => {
     const { name, price, img } = products;
-    const setPrice = price.slice(1);
-    const [updatedPrice, setUpdatedPrices] = useState(parseInt(setPrice));
+    const setPrice = parseInt(price.slice(1));
+    const [updatedPrice, setUpdatedPrices] = useState(setPrice);
     const [count, setCount] = useState(1);
 
     const handleDecreasePrice = () => {
@@ -14,14 +14,14 @@ const CartProductsCard = ({ products }) => {
             return setCount(1);
         }
         setCount(num);
-        const calcPrice = updatedPrice / count;
+        const calcPrice = updatedPrice - setPrice;
         setUpdatedPrices(calcPrice);
     }
 
     const handleIncreasePrice = () => {
         const num = count + 1;
         setCount(num);
-        const calcPrice = num * updatedPrice;
+        const calcPrice = updatedPrice + setPrice;
         setUpdatedPrices(calcPrice);
     }
 
